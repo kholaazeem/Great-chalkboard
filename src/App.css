@@ -1,42 +1,41 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ====================Custom global variable(var name can be any) means  when want to use call var name=========================================== */
+
+:root{
+  --color-green: #1B4D3E;
+  --color-orange: #E76F51;
+  --color-bg: #FAFAF8;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body{
+  background-color: var(--color-bg);
+  font-family: 'Georgia', serif;
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ===============================Reusable button=========================================================================================  */
+
+.custom-btn{
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-orange{
+  background-color: var(--color-orange);
+  color: white;
 }
 
-.card {
-  padding: 2em;
+.btn-orange :hover{
+  background-color: #d65a3d;
+  transform: translateY(-2px);
 }
 
-.read-the-docs {
-  color: #888;
+
+.btn-green{
+  background-color: var(--color-green);
+  color: white;
 }
