@@ -1,9 +1,12 @@
 import React from 'react';
 import { BsBook, BsStarFill, BsCart2, BsTelephone } from "react-icons/bs";
+// 1. Apne banaye hue hook ko import kiya
+import { useCart } from '../context/CartContext'; 
 
 const Shop = () => {
-  // Cards ka saara data yahan ek array mein hai. 
-  // Maine badge colors bhi yahi define kar diye hain taake exact image jaisa look aaye.
+  // 2. Hook mein se addToCart function nikal liya
+  const { addToCart } = useCart();
+
   const shopData = [
     {
       id: 1,
@@ -68,7 +71,6 @@ const Shop = () => {
   ];
 
   return (
-    // animate-up class lagayi hai taake page khulte hi smoothly upar aaye
     <div className="container animate-up" style={{ marginTop: '130px', marginBottom: '80px' }}>
       
       {/* ================= Header Section ================= */}
@@ -83,7 +85,6 @@ const Shop = () => {
       {/* ================= Cards Grid Section ================= */}
       <div className="row g-4 mb-5 pb-4">
         {shopData.map((item) => (
-          // Laptop par 3 columns (col-lg-4), Tablet par 2 (col-md-6), Mobile par 1 (col-12)
           <div key={item.id} className="col-12 col-md-6 col-lg-4">
             
             <div className="shop-card h-100 p-4 d-flex flex-column bg-white rounded-4">
@@ -116,7 +117,12 @@ const Shop = () => {
               {/* Bottom Row: Price & Button */}
               <div className="d-flex justify-content-between align-items-center mt-auto">
                 <span className="shop-price">{item.price}</span>
-                <button className="btn-add-cart d-flex align-items-center gap-2">
+                
+                {/* 3. Yahan onClick laga diya jo item ko cart mein bhejega */}
+                <button 
+                  className="btn-add-cart d-flex align-items-center gap-2"
+                  onClick={() => addToCart(item)}
+                >
                   <BsCart2 size={18} />
                   <span>Add</span>
                 </button>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CartSidebar from './components/CartSidebar'; // 1. CartSidebar ko import kiya
 
 // Pages
 import Home from './pages/Home';
@@ -17,6 +18,9 @@ function App() {
       <div>
         {/* Navbar har page par upar rahega */}
         <Navbar />
+
+        {/* 2. CartSidebar ko yahan call kar liya (Yeh har page par zinda rahega) */}
+        <CartSidebar /> 
 
         {/* Yeh hissa links pe click karne se change hoga */}
         <Routes>
