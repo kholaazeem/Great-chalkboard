@@ -1023,3 +1023,57 @@ body{
     font-size: 1.4rem;
   }
 }
+
+/* ================= Cart Sidebar CSS ================= */
+
+/* Background Overlay (Kala Parda) */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1060;
+}
+
+/* Sidebar Box */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Shuru mein screen se bahar right side pe chupa hoga */
+  width: 400px;
+  max-width: 100vw; /* Mobile ke liye */
+  height: 100vh;
+  background-color: white;
+  z-index: 1070;
+  box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Jab open ho toh right 0 ho jaye (Screen par aa jaye) */
+.cart-sidebar.open {
+  right: 0;
+}
+
+/* + / - Buttons */
+.qty-btn {
+  background-color: #E8F0EC;
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--color-green);
+  transition: all 0.2s;
+}
+
+.qty-btn:hover {
+  background-color: var(--color-green);
+  color: white;
+}
