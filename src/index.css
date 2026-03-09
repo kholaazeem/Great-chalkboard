@@ -1,14 +1,21 @@
+/* Sab se pehli line yeh honi chahiye */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
 /* ====================Custom global variable(var name can be any) means  when want to use call var name=========================================== */
 
 :root{
   --color-green: #1B4D3E;
   --color-orange: #e45c3a;
   --color-bg: #FAFAF8;
+  --font-heading: 'Playfair Display', serif; /* Headings ke liye */
+  --font-body: 'Inter', sans-serif; /* Baaki sab cheezon ke liye */
 }
+
 
 body{
   background-color: var(--color-bg);
-  font-family: 'Georgia', serif;
+  font-family: var(--font-body); 
+  margin: 0;
 
 }
 
@@ -16,6 +23,7 @@ body{
 
 .custom-btn{
   border: none;
+
   padding: 10px 24px;
   border-radius: 30px;
   font-weight: 600;
@@ -46,7 +54,7 @@ body{
 /* Gloassmorphismm effect in navbar */
 
 .glass-nav{
-  background: rgba(190, 184, 184, 0.75); 
+  background: rgba(255, 255 ,255 ,0.75); 
   backdrop-filter:blur(12px) ; /* gives blur effect bg things*/
   -webkit-backdrop-filter: blur(12px); /* gives blur eff to bg things but for mac and apple*/
   width: 90%;
@@ -69,186 +77,72 @@ body{
 
 }
 
-.nav-link:not(.active-link):hover{
+.nav-link:not(:focus):hover{
     background-color: rgba(0,0,0,0.05);
   color: var(--color-green);
 }
 
-.active-link {
+.nav-link:focus {
   background-color: var(--color-green);
   color: white !important;
 
 }
 
 
-/* ====================Custom global variable(var name can be any) means  when want to use call var name=========================================== */
+/* ==================================== Hero Section CSS ==================================== */
 
-:root{
-  --color-green: #1B4D3E;
-  --color-orange: #E76F51;
-  --color-bg: #FAFAF8;
-}
-
-body{
-  background-color: var(--color-bg);
-  font-family: 'Georgia', serif;
-
-}
-
-/* ===============================Reusable button=========================================================================================  */
-
-.custom-btn{
-  border: none;
-  padding: 10px 24px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-orange{
-  background-color: var(--color-orange);
-  color: white;
-}
-
-.btn-orange:hover{
-  background-color: #d65a3d;
-  transform: translateY(-2px);
-}
-
-
-.btn-green{
-  background-color: var(--color-green);
-  color: white;
-}
-
-
-/* ====================================Naavbar css ============================================================== */
-
-/* Gloassmorphismm effect in navbar */
-
-.glass-nav{
-  background: rgba(255,255,255,0.75); 
-  backdrop-filter:blur(12px) ; /* gives blur effect bg things*/
-  -webkit-backdrop-filter: blur(12px); /* gives blur eff to bg things but for mac and apple*/
-  width: 90%;
-  max-width: 1100px;
+.custom-badge {
+  background-color: #F8B82A; /* Image jaisa Yellow color */
+  color: #1B4D3E; /* Dark green text */
+  padding: 8px 18px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+  font-weight: 700;
+  font-size: 14px;
 }
 
-/* Navbar links  */
-
-.nav-link {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  transition: all 0.3s ease;
-
+.hero-heading {
+  font-family: var(--font-heading); /* Yeh usko wo stylish font dega */
+  font-size: 4rem; 
+  font-weight: 400;
+  color: var(--color-green);
+  line-height: 1.1;
+  letter-spacing: -1px; /* Image jaisa compact aur premium look dene ke liye */
 }
 
-.nav-link:hover{
+.text-orange {
+  color: var(--color-orange);
+}
+
+.hero-text {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 480px; /* Text ki width control karne ke liye */
+  line-height: 1.6;
+}
+
+.hero-image {
+  border-radius: 20px; /* Image ko golayi dene ke liye */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Pyara sa shadow */
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Outline Button Design */
+.btn-outline-green {
+  background-color: transparent;
+  border: 2px solid var(--color-green);
   color: var(--color-green);
 }
 
-.active-link {
+.btn-outline-green:hover {
   background-color: var(--color-green);
-  color: white !important;
-  padding: 6px 16px;
-  border-radius: 20px;
-}
-
-
-/* ====================Custom global variable(var name can be any) means  when want to use call var name=========================================== */
-
-:root{
-  --color-green: #1B4D3E;
-  --color-orange: #E76F51;
-  --color-bg: #FAFAF8;
-}
-
-body{
-  background-color: var(--color-bg);
-  font-family: 'Georgia', serif;
-
-}
-
-/* ===============================Reusable button=========================================================================================  */
-
-.custom-btn{
-  border: none;
-  padding: 10px 24px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-orange{
-  background-color: var(--color-orange);
   color: white;
-}
-
-.btn-orangw:hover{
-  background-color: #d65a3d;
   transform: translateY(-2px);
 }
 
-
-.btn-green{
-  background-color: var(--color-green);
-  color: white;
+/* Mobile Responsiveness ke liye adjustments */
+@media (max-width: 991px) {
+  .hero-heading {
+    font-size: 2.8rem; /* Mobile par heading choti ho jayegi */
+  }
 }
-
-
-/* ====================================Naavbar css ============================================================== */
-
-/* Gloassmorphismm effect in navbar */
-
-.glass-nav{
-  background: rgba(255,255,255,0.75); 
-  backdrop-filter:blur(12px) ; /* gives blur effect bg things*/
-  -webkit-backdrop-filter: blur(12px); /* gives blur eff to bg things but for mac and apple*/
-  width: 90%;
-  max-width: 1100px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.05);
-}
-
-/* Navbar links  */
-
-.nav-link {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  transition: all 0.3s ease;
-
-}
-
-.nav-link:hover{
-  color: var(--color-green);
-}
-
-.active-link {
-  background-color: var(--color-green);
-  color: white !important;
-  padding: 6px 16px;
-  border-radius: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
