@@ -9,6 +9,7 @@
   --color-bg: #FAFAF8;
   --font-heading: 'Playfair Display', serif; /* Headings ke liye */
   --font-body: 'Inter', sans-serif; /* Baaki sab cheezon ke liye */
+  
 }
 
 
@@ -144,5 +145,881 @@ body{
 @media (max-width: 991px) {
   .hero-heading {
     font-size: 2.8rem; /* Mobile par heading choti ho jayegi */
+  }
+}
+
+/* ================= Hero Animations ================= */
+
+/* Left se aane wali animation (Text ke liye) */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px); /* Shuru mein thoda piche (left) aur ghayab hoga */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Apni asli jagah par aa jayega */
+  }
+}
+
+/* Right se aane wali animation (Image ke liye) */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px); /* Shuru mein thoda aage (right) aur ghayab hoga */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Apni asli jagah par aa jayega */
+  }
+}
+
+/* In animations ko use karne ke liye classes banayein */
+.animate-left {
+  animation: slideInFromLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-right {
+  animation: slideInFromRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+/* ================= Stats Section CSS ================= */
+
+.stat-card {
+  border: 1px solid rgba(0, 0, 0, 0.03); /* Bohot halka sa border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover karne par card thoda sa upar uthega aur shadow aayega */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+.icon-box {
+  width: 65px;
+  height: 65px;
+  background-color: #E8F0EC; /* Exact image jaisa light green background */
+  color: var(--color-green); /* Dark green icon */
+  flex-shrink: 0; /* Agar mobile par text lamba ho jaye toh dabba chota nahi hoga */
+}
+
+.stat-number {
+  font-family: var(--font-heading); /* Wahi premium Playfair font */
+  color: var(--color-green);
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+.stat-text {
+  font-family: var(--font-body); /* Clean Inter font */
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+/* ================= Team Section CSS ================= */
+
+.team-section-title {
+  font-family: var(--font-heading); /* Wahi premium font jo Hero section mein tha */
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.team-section-subtitle {
+  font-family: var(--font-body);
+  color: #555;
+  font-size: 1.05rem;
+  max-width: 650px; /* Text ko zyada phailne se roknay ke liye */
+  line-height: 1.6;
+}
+
+/* Card Design & Animation */
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.team-card:hover {
+  transform: translateY(-8px); /* Hover par thoda sa upar uthega */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Image Wrapper (Image zoom effect ke liye) */
+.team-img-wrapper {
+  overflow: hidden; /* Taake image card se bahar na nikle */
+}
+
+.team-img-wrapper img {
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img-wrapper img {
+  transform: scale(1.05); /* Hover par image halki si zoom hogi */
+}
+
+/* Text Styling */
+.team-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #111;
+  font-size: 1.4rem;
+}
+
+.team-role {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Chota sa Green Badge */
+.team-badge {
+  background-color: #E8F0EC; /* Light green background */
+  color: var(--color-green); /* Dark green text/icon */
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+/* ================= Call to Action (CTA) CSS ================= */
+
+.cta-banner {
+  /* Exact image jaisa left-to-right warm gradient */
+  background: linear-gradient(135deg, #F8B82A 0%, #E76F51 100%);
+  padding: 4.5rem 2rem; /* Dabbay ke andar bohot sari jagah */
+}
+
+.cta-heading {
+  font-family: var(--font-heading); /* Playfair font */
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+.cta-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  max-width: 650px;
+  opacity: 0.9; /* Text ko thoda sa naram (soft) dikhane ke liye */
+  line-height: 1.6;
+}
+
+/* White Button Design */
+.cta-btn {
+  background-color: white;
+  color: #222;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none; /* Link ke neechay se line hatane ke liye */
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Button ke peechay halka saya */
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  color: var(--color-orange); /* Hover karne par text orange ho jayega */
+}
+
+/* Mobile Screens ke liye adjusting */
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 3rem 1.5rem; /* Mobile par padding thodi kam */
+  }
+  .cta-heading {
+    font-size: 2.2rem; /* Mobile par heading thodi choti */
+  }
+}
+
+/* ================= Footer CSS ================= */
+
+.footer-section {
+  background-color: var(--color-green); /* Wahi purana global dark green color */
+  padding-top: 4rem;
+  padding-bottom: 1.5rem;
+  color: white;
+  margin-top: 3rem; /* Upar wale section se thoda fasla */
+}
+
+/* Headings (Logo aur Column Titles) */
+.footer-brand {
+  font-family: var(--font-heading); /* Playfair font */
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Text aur Links */
+.footer-text {
+  font-family: var(--font-body); /* Clean Inter font */
+  color: rgba(255, 255, 255, 0.85); /* Pure white nahi, thoda soft off-white */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-link {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Links par Hover effect (Thoda aage move hongay aur color change hoga) */
+.footer-link:hover {
+  color: #F8B82A; /* Yellowish hover */
+  transform: translateX(4px);
+}
+
+/* Patli Line (Divider) */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer Gradient Button */
+.footer-btn {
+  background: linear-gradient(90deg, #F8B82A 0%, #F39C12 100%); /* Yellow to Orange gradient */
+  color: #111; /* Dark text */
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(248, 184, 42, 0.4); /* Glow effect */
+  color: #111;
+}
+
+
+/* ================= About Page CSS ================= */
+
+.about-title {
+  font-family: var(--font-heading); /* Wahi premium font */
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+.about-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px; /* Text ko darmiyan mein rakhne ke liye constraint */
+  line-height: 1.6;
+}
+
+.about-image-wrapper {
+  max-width: 1000px; /* Image ko screen par bohot bada hone se rokne ke liye */
+  width: 100%;
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  max-height: 500px; /* Height fix kardi taake image buri na lagay */
+}
+
+/* Mobile Screens ke liye responsive adjustments */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ================= Our Story Section CSS ================= */
+
+.story-title {
+  font-family: var(--font-heading); /* Playfair font */
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-green); /* Dark green color */
+  letter-spacing: -1px;
+}
+
+.story-text {
+  font-family: var(--font-body); /* Clean Inter font */
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.story-image {
+  border-radius: 24px; /* Image ke pyare se gol kinare */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Halka sa mehnga wala saya (shadow) */
+  width: 100%;
+  /* Yeh height fix karne wali trick hai taake image text se bari dikhe */
+  min-height: 550px; 
+  object-fit: cover; /* Agar image stretch ho rahi ho toh usko rokne ke liye */
+}
+
+/* Mobile aur Tablet Screens ke liye adjustments */
+@media (max-width: 991px) {
+  .story-title {
+    font-size: 2.5rem;
+  }
+  .story-image {
+    min-height: 350px; /* Mobile par image thodi choti ho jayegi */
+  }
+}/* ================= Our Story Section CSS ================= */
+
+.story-title {
+  font-family: var(--font-heading); /* Playfair font */
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-green); /* Dark green color */
+  letter-spacing: -1px;
+}
+
+.story-text {
+  font-family: var(--font-body); /* Clean Inter font */
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.story-image {
+  border-radius: 24px; /* Image ke pyare se gol kinare */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Halka sa mehnga wala saya (shadow) */
+  width: 100%;
+  /* Yeh height fix karne wali trick hai taake image text se bari dikhe */
+  min-height: 550px; 
+  object-fit: cover; /* Agar image stretch ho rahi ho toh usko rokne ke liye */
+}
+
+/* Mobile aur Tablet Screens ke liye adjustments */
+@media (max-width: 991px) {
+  .story-title {
+    font-size: 2.5rem;
+  }
+  .story-image {
+    min-height: 350px; /* Mobile par image thodi choti ho jayegi */
+  }
+}/* ================= Our Story Section CSS ================= */
+
+.story-title {
+  font-family: var(--font-heading); /* Playfair font */
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-green); /* Dark green color */
+  letter-spacing: -1px;
+}
+
+.story-text {
+  font-family: var(--font-body); /* Clean Inter font */
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.story-image {
+  border-radius: 24px; /* Image ke pyare se gol kinare */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Halka sa mehnga wala saya (shadow) */
+  width: 100%;
+  /* Yeh height fix karne wali trick hai taake image text se bari dikhe */
+  min-height: 550px; 
+  object-fit: cover; /* Agar image stretch ho rahi ho toh usko rokne ke liye */
+}
+
+/* Mobile aur Tablet Screens ke liye adjustments */
+@media (max-width: 991px) {
+  .story-title {
+    font-size: 2.5rem;
+  }
+  .story-image {
+    min-height: 350px; /* Mobile par image thodi choti ho jayegi */
+  }
+}
+
+/* ================= Our Impact Section CSS ================= */
+
+/* Graph Paper Background Jadoo */
+.graph-paper-box {
+  background-color: #ffffff;
+  /* CSS se graph paper ki patli lines banana */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 25px 25px; /* Dabbay (squares) ka size */
+  background-position: center center;
+  
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px; /* Gol kinare */
+  padding: 4rem 2rem; /* Dabbay ke andar space */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); /* Bohot halka saya */
+}
+
+/* Stats Numbers and Text */
+.impact-number {
+  font-family: var(--font-heading); /* Wahi premium Playfair font */
+  color: var(--color-green);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.impact-label {
+  font-family: var(--font-body); /* Clean Inter font */
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Right Side Headings and Text */
+.impact-title {
+  font-family: var(--font-heading);
+  color: var(--color-green); /* Dark green heading */
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.impact-text {
+  font-family: var(--font-body);
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* Mobile Screens ke liye responsive touch */
+@media (max-width: 991px) {
+  .impact-title {
+    font-size: 2.4rem;
+    text-align: center; /* Mobile par heading center ho jaye */
+  }
+  .impact-text {
+    text-align: center; /* Mobile par text center ho jaye */
+  }
+  .graph-paper-box {
+    padding: 3rem 1rem;
+  }
+}
+
+
+/* ================= What We Stand For CSS ================= */
+
+/* Main Heading */
+.stand-for-title {
+  font-family: var(--font-heading); /* Playfair font */
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--color-green); /* Dark green color */
+  letter-spacing: -1px;
+}
+
+/* Static Card Design (No Hover) */
+.stand-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  /* Bohot halka aur soft shadow jo image mein nazar aa raha hai */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Icon Wala Dabba */
+.stand-icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #E8F0EC; /* Light grayish green bg */
+  color: var(--color-green); /* Dark green icon */
+  border-radius: 12px;
+}
+
+/* Card ki Heading */
+.stand-card-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+/* Card ka Text */
+.stand-card-text {
+  font-family: var(--font-body);
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Mobile Screens ke liye adjusting */
+@media (max-width: 768px) {
+  .stand-for-title {
+    font-size: 2.4rem;
+  }
+  .stand-card {
+    padding: 1.5rem !important; /* Mobile par padding thodi kam ho jayegi */
+    flex-direction: column; /* Mobile par icon text ke upar aa jayega agar jagah kam ho */
+    gap: 1rem !important;
+  }
+}
+
+/* ================= Fade In Up Animation ================= */
+
+/* Keyframes: Neechay se halka upar aur gayab se hazir */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Shuru mein 30px neechay rahega */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Apni asli jagah par aa jayega */
+  }
+}
+
+/* Is animation ko apply karne ke liye class */
+.animate-up {
+  /* Maine wahi smooth cubic-bezier rakha hai taake makhan jaisa effect rahay */
+  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}/* ================= Fade In Up Animation ================= */
+
+/* Keyframes: Neechay se halka upar aur gayab se hazir */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Shuru mein 30px neechay rahega */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Apni asli jagah par aa jayega */
+  }
+}
+
+/* Is animation ko apply karne ke liye class */
+.animate-up {
+  /* Maine wahi smooth cubic-bezier rakha hai taake makhan jaisa effect rahay */
+  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+/* ================= Shop Page CSS ================= */
+
+/* Header */
+.shop-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-green);
+  letter-spacing: -1px;
+}
+
+.shop-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Cards Design & Hover Animation */
+.shop-card {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover ke liye smooth transition */
+}
+
+.shop-card:hover {
+  transform: translateY(-8px); /* Card halka sa upar uthega */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Saya thoda gehra ho jayega */
+}
+
+/* Badge & Rating */
+.shop-badge {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.shop-rating {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Big Grey Icon Box */
+.shop-icon-box {
+  background-color: #F8F9FA; /* Light grey background */
+  height: 120px;
+  width: 100%;
+}
+
+/* Card Typography */
+.shop-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+
+.shop-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.shop-price {
+  font-family: var(--font-heading); /* Price ke liye premium font */
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4A6E63; /* Greyish Green color */
+}
+
+/* Add to Cart Button */
+.btn-add-cart {
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: #133a2e; /* Thoda dark green */
+  transform: scale(1.05);
+}
+
+/* Bottom CTA Section */
+.shop-cta-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.btn-shop-cta {
+  background-color: var(--color-orange); /* Orange button */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+}
+
+.btn-shop-cta:hover {
+  background-color: #d65a3d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .shop-title {
+    font-size: 2.6rem;
+  }
+}/* ================= Shop Page CSS ================= */
+
+/* Header */
+.shop-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-green);
+  letter-spacing: -1px;
+}
+
+.shop-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Cards Design & Hover Animation */
+.shop-card {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover ke liye smooth transition */
+}
+
+.shop-card:hover {
+  transform: translateY(-8px); /* Card halka sa upar uthega */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Saya thoda gehra ho jayega */
+}
+
+/* Badge & Rating */
+.shop-badge {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.shop-rating {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Big Grey Icon Box */
+.shop-icon-box {
+  background-color: #F8F9FA; /* Light grey background */
+  height: 120px;
+  width: 100%;
+}
+
+/* Card Typography */
+.shop-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+
+.shop-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.shop-price {
+  font-family: var(--font-heading); /* Price ke liye premium font */
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4A6E63; /* Greyish Green color */
+}
+
+/* Add to Cart Button */
+.btn-add-cart {
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: #133a2e; /* Thoda dark green */
+  transform: scale(1.05);
+}
+
+/* Bottom CTA Section */
+.shop-cta-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.btn-shop-cta {
+  background-color: var(--color-orange); /* Orange button */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+}
+
+.btn-shop-cta:hover {
+  background-color: #d65a3d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .shop-title {
+    font-size: 2.6rem;
+  }
+}
+
+/* ================= Terms Page CSS ================= */
+
+/* Content ko center karne aur width limit karne ke liye */
+.terms-wrapper {
+  max-width: 800px; /* Text ko is se zyada chaura (wide) nahi hone dega */
+  padding: 0 15px;
+}
+
+.terms-main-title {
+  font-family: var(--font-heading); /* Wahi premium Playfair font */
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-green);
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.terms-subtitle {
+  font-family: var(--font-body); /* Clean Inter font */
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3.5rem; /* Neechay wale points se fasla */
+}
+
+/* Har ek paragraph block ki setting */
+.terms-section {
+  margin-bottom: 2.5rem;
+}
+
+.terms-heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.8rem;
+}
+
+.terms-text {
+  font-family: var(--font-body);
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7; /* Text padhne mein asani ho isliye line height zyada rakhi hai */
+}
+
+/* Mobile Screens ke liye adjusting */
+@media (max-width: 768px) {
+  .terms-main-title {
+    font-size: 2.5rem;
+  }
+  .terms-heading {
+    font-size: 1.4rem;
   }
 }

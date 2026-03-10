@@ -1,18 +1,16 @@
-import React from "react";
+import React from 'react';
 
+// 1. Props mein 'onClick' add kiya
+const Button = ({ text, icon, variant, onClick }) => {
+  const btnClass = variant === 'primary' ? 'btn-orange' : variant === 'outline' ? 'btn-outline-green' : 'btn-green';
 
-
-
-const Button = ({text , variant , icon}) => {   // 'props' is an object and here we use destructuring props     
-
-    const btnClass = variant === 'primary' ? 'btn-orange' : variant === 'outline' ? 'btn-outline-green' : 'btn-green';
   return (
-      
-    <button className= {`custom-btn ${btnClass} d-flex align-items-center gap-2`}>
-    {icon && <span>{icon}</span>}
-    <span>{text}</span>
+    // 2. <button> tag ke andar onClick={onClick} laga diya
+    <button className={`custom-btn ${btnClass} d-flex align-items-center gap-2`} onClick={onClick}>
+      {icon && <span>{icon}</span>}
+      <span>{text}</span>
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
